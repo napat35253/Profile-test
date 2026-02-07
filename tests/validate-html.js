@@ -31,7 +31,7 @@ function validate() {
     { name: 'about section', pattern: /id="about"/i },
     { name: 'skills section', pattern: /id="skills"/i },
     { name: 'experience section', pattern: /id="experience"/i },
-    { name: 'projects section', pattern: /id="projects"/i },
+    { name: 'awards section', pattern: /id="awards"/i },
     { name: 'contact section', pattern: /id="contact"/i },
     { name: 'CSS stylesheet link', pattern: /<link[^>]+stylesheet[^>]+style\.css/i },
     { name: 'JS script tag', pattern: /<script[^>]+main\.js/i },

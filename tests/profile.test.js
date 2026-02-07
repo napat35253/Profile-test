@@ -21,7 +21,7 @@ describe('HTML Structure', () => {
   test('has correct document title', () => {
     const title = document.querySelector('title');
     expect(title).not.toBeNull();
-    expect(title.textContent).toContain('Alex Morgan');
+    expect(title.textContent).toContain('Napat');
   });
 
   test('has meta viewport tag for responsiveness', () => {
@@ -80,7 +80,7 @@ describe('Navigation', () => {
     expect(hrefs).toContain('#about');
     expect(hrefs).toContain('#skills');
     expect(hrefs).toContain('#experience');
-    expect(hrefs).toContain('#projects');
+    expect(hrefs).toContain('#awards');
     expect(hrefs).toContain('#contact');
   });
 
@@ -102,14 +102,14 @@ describe('Hero Section', () => {
   test('displays name', () => {
     const name = document.querySelector('.hero-name');
     expect(name).not.toBeNull();
-    expect(name.textContent).toContain('Alex');
-    expect(name.textContent).toContain('Morgan');
+    expect(name.textContent).toContain('Napat');
+    expect(name.textContent).toContain('Bhaholpolbhayuhasena');
   });
 
   test('displays title', () => {
     const title = document.querySelector('.hero-title');
     expect(title).not.toBeNull();
-    expect(title.textContent).toContain('Senior Software Engineer');
+    expect(title.textContent).toContain('I engineer things');
   });
 
   test('has call-to-action buttons', () => {
@@ -233,39 +233,31 @@ describe('Experience Section', () => {
 });
 
 // ============================================================
-// Projects Section Tests
+// Awards Section Tests
 // ============================================================
-describe('Projects Section', () => {
-  test('has projects section', () => {
-    const projects = document.getElementById('projects');
-    expect(projects).not.toBeNull();
+describe('Awards Section', () => {
+  test('has awards section', () => {
+    const awards = document.getElementById('awards');
+    expect(awards).not.toBeNull();
   });
 
-  test('has project cards', () => {
+  test('has award cards', () => {
     const cards = document.querySelectorAll('.project-card');
     expect(cards.length).toBeGreaterThanOrEqual(4);
   });
 
-  test('project cards are article elements', () => {
+  test('award cards are article elements', () => {
     const articles = document.querySelectorAll('article.project-card');
     expect(articles.length).toBeGreaterThanOrEqual(4);
   });
 
-  test('each project has title, description, and tech stack', () => {
+  test('each award has title, description, and details', () => {
     const cards = document.querySelectorAll('.project-card');
     cards.forEach((card) => {
       expect(card.querySelector('.project-title')).not.toBeNull();
       expect(card.querySelector('.project-description')).not.toBeNull();
       const techs = card.querySelectorAll('.project-tech span');
       expect(techs.length).toBeGreaterThan(0);
-    });
-  });
-
-  test('each project has GitHub and demo links', () => {
-    const cards = document.querySelectorAll('.project-card');
-    cards.forEach((card) => {
-      const links = card.querySelectorAll('.project-link');
-      expect(links.length).toBe(2);
     });
   });
 });
